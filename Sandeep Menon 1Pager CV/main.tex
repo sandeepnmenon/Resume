@@ -1,0 +1,365 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+%sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{helvet}
+\usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{segoe}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+% \addtolength{\oddsidemargin}{-0.6in}
+% \addtolength{\evensidemargin}{-0.6in}
+% \addtolength{\textwidth}{1.19in}
+% \addtolength{\topmargin}{-.5in}
+% % \addtolength{\bottmargin}{-.5in}
+% \addtolength{\textheight}{1.4in}
+
+\usepackage[hmargin=1cm, vmargin=1cm]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}%
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{title-rule-color}{HTML}{808080}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{em}{}[\color{title-rule-color}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+\definecolor{italic-color}{HTML}{555555}
+
+\newcommand{\resumeEducation}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \text{\small#3} & \text{\color{italic-color}\small #4} \\
+      % \text{\small #5}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeMooc}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+    \end{tabular*}
+    \text{\small#3}
+}
+
+\newcommand{\resumeSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      % \text{\small #3} & \text{\color{italic-color}\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]\itemsep1pt}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}\itemsep1pt}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\usepackage{bibentry} 
+\begin{filecontents}{publication.bib}
+@inproceedings{menon2020novel,
+  title={A novel deep learning approach for the removal of speckle noise from optical coherence tomography images using gated convolution--deconvolution structure},
+  author={\textbf{Sandeep N Menon} and Reddy, VB Vineeth and Yeshwanth, A and Anoop, BN and Rajan, Jeny},
+  booktitle={Proceedings of 3rd International Conference on Computer Vision and Image Processing},
+  pages={115--126},
+  year={2020},
+  organization={Springer, Singapore}
+}
+@INPROCEEDINGS{oct2019,
+  title={A novel Deep Learning Approach for the removal ofspeckle noise from Optical Coherence Tomography Images using Gated Convolution Deconvolution Structure},
+  author={Sandeep N Menon, V B Vineeth Reddy, Yeshwanth A, Anoop B N and Dr Jeny Rajan},
+  year={2019},
+  publisher={Springer},
+
+}
+\end{filecontents}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+
+% \cfoot{\thepage\ of \pageref{LastPage}}
+\fancyfoot[L]{\ifnum\thepage=2 \small \today\ \currenttime \fi}
+    % \fancyfoot[L]{\today\ \currenttime}
+% \fancyhead[R]{\today}
+\fancyfootoffset[R]{10pt}
+\fancyfoot[R]{\small \thepage\ of \pageref{LastPage}}
+
+\newcommand{\lastupdated}{\begin{textblock}
+\fontsize{8pt}{10pt}\selectfont 
+\today
+\end{textblock}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ATS friendly pdf as per https://www.reddit.com/r/LaTeX/comments/3nr2vn/how_can_i_ensure_that_my_latex_resume_is_readable/
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\begin{document}
+\bibliographystyle{plain}
+\nobibliography{publication}
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Sandeep N Menon} \\ \vspace{1pt}
+    % Flat No 6B, Rubber Residency, Kanjikuzhy Kottayam, Kerala, India 686004 \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +1 347-951-5417 ~ \href{mailto:menonsandu@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  {menonsandu@gmail.com}} ~ 
+    \href{https://linkedin.com/in/sandeep-n-menon}{\raisebox{-0.2\height}\faLinkedin\ {linkedin.com/in/sandeep-n-menon}}  \\
+    \href{https://github.com/sandeepnmenon}{\raisebox{-0.2\height}\faGithub\ {github.com/sandeepnmenon}} \href{https://sandeepnmenon.github.io/}{\raisebox{-0.2\height}\faHome \ sandeepnmenon.github.io}
+    \vspace{-10pt}
+\end{center}
+
+
+%-----------Research Interests-----------
+% \section{Research Interests}
+% Deep Learning, Computer Vision, Adversarial Networks, Generative Models
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeEducation{New York University (NYU) Courant Institute of Mathematical Sciences}{2022 -- Present}{Masters in Computer Science}{New York, USA}
+    \resumeEducation
+      {National Institute of Technology Karnataka, Surathkal, India (NITK)}{2014 -- 2018}
+      {Bachelor of Technology in Computer Science - CGPA: 8.83/10}{Karnataka, India}
+      \resumeItemListStart
+                \resumeItem{President of Web Enthusiasts Club NITK. Organized mock technical interviews, CTFs, Linux installation drives.}
+                \vspace{-16pt}
+                \resumeItem{Core executive member at IEEE NITK Student Chapter. Conducted hackathons and programming contests.}
+                % \resumeItem{Writing research paper commentary at \hyperlink{https://oneortworesearchdigest.blogspot.com}{\textit{https://oneortworesearchdigest.blogspot.com}} focusing on new neural network architectures and applications since 2020.}
+        \resumeItemListEnd
+    \vspace{-10pt}
+  \resumeSubHeadingListEnd
+
+% %------RELEVANT COURSEWORK-------
+% \section{Relevant Coursework}
+%     %\resumeSubHeadingListStart
+%         \begin{multicols}{4}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Computer Vision
+%                 \item Artificial Intelligence
+%                 \item Linear Algebra
+%                 \item Probability Theory
+%                 \item Advanced Data Structures
+%                 \item Graph Theory
+%                 \item Digital Image Processing
+%                 \item Computer Graphics
+%             \end{itemize}
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+%     %\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Industry Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Deep Learning Research Engineer $|$ \href{https://www.deepen.ai/}{Deepen AI} $|$
+ Hyderabad, India}{September 2020 -- July 2022}
+      % {Deepen AI}{}
+      \resumeItemListStart
+        \resumeItem{Developed a 3D PointNet model that performs temporal smoothing of segmentation predictions over point cloud sequences, improving mean Intersection over Union (mIoU) by 20\%.}
+        \resumeItem{Built a Sparse Point-Voxel CNN model for semantic segmentation of 3D point cloud sequences. Improved data annotation speed by 30\% and achieved mIoU score of 76\%.}
+        \resumeItem{Implemented object-aware anchor-free tracking for 2D visual object tracking and VPGNet model for lane segmentation and classification.}
+        \resumeItem{Developed algorithm for targetless Camera-IMU and stereo camera calibration.}
+        % \resumeItem{Implemented algorithm for targetless stereo camera calibration.}
+        % \resumeItem{Created an on-demand GPU Virtual Machine allocation system using Azure. Enabled automatic allocation and de-allocation of expensive GPU machines, thereby saving up to 1000 USD per month.}
+        % \resumeItem{Worked with Potree, an open-source WebGL based point cloud renderer for large point clouds, thereby developing a system that could render point clouds with more than 150 million points in a web browser.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Development Engineer II $|$ \href{https://www.microsoft.com/en-in}{Microsoft} $|$ Hyderabad, India}{June 2018 -- September 2020}
+      % {Microsoft}{}
+      \resumeItemListStart
+        \resumeItem{Introduced a new Machine Learning method to identify similar won deals in CRM context for Relationship Analytics in Dynamics 365, received a patent award on the same.}
+        % \resumeItem{Designed and implemented Machine Learning infrastructure to run, store and display AI model predictions using Azure Batch, MySQL, and .NET Core. } % metrics and reword for non-MS readers.
+        \resumeItem{Developed a GDPR query handling service for the email insights infrastructure that handles up to 1 million daily service requests.}
+        \resumeItem{Shipped Dynamics 365 sales insights connector in Microsoft Flows that manages more than 9 million monthly service requests. }
+    \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+
+% Reduce spacing
+% give dates
+%-----------PROJECTS-----------
+\section{Selected Publications and Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://link.springer.com/chapter/10.1007/978-981-32-9291-8_10}{Removing noise from Optical Coherence Tomography (OCT) Images} [published]}}{August 2017 - May 2018}
+        %   \vspace{-15pt}
+          \resumeItemListStart
+            \resumeItem{\bibentry{menon2020novel}}
+            % \resumeItem{Created a deep encoder-decoder neural network with gated skip connections that identifies and removes noise from medical images. Applied this method on OCT images to eliminate the inherent speckle noise.}
+            % \resumeItem{Achieved Structural Similarity Index (SSIM) value of 96.7\% for low noise images and 91.2\% for high noise images, surpassing the state-of-the-art results at the time of publishing.}
+          \resumeItemListEnd
+          \vspace{-20pt}
+
+        \resumeProjectHeading{\textbf{Point Cloud Oversegmentation using Superpoint Graphs} $|$ \emph{PyTorch, Boost}}{May - June 2021}
+        \resumeItemListStart
+            \resumeItem{Adapted Superpoint Graph implementation to Argoverse point cloud dataset to achieve oversegmentation results of overall accuracy of 96\% and Boundary Recall of 92\%.}
+        \resumeItemListEnd
+          \vspace{-20pt}
+        % \resumeProjectHeading{\textbf{Point Cloud Segmentation using projected 2D segmentation} $|$ \emph{MMSegmentation}}{April - May 2021}
+        % \resumeItemListStart
+        %     \resumeItem{Created point cloud semantic segmentation pipeline by projecting image segmentation of camera output using HRNet, DeepLabV3 and PointRend models.}
+        %     \resumeItem{Implemented projection of 3D space onto the 2D segmentation results of images from every camera mount to obtain the estimated class value of all 3D points; inspired from PointPainting paper.}
+        % \resumeItemListEnd
+        % \vspace{-15pt}
+        \resumeProjectHeading{\textbf{Online calibration of Surround-view Camera system} $|$ \emph{OpenCV, Sophus, Boost}}{April - May 2021}
+        \resumeItemListStart
+            \resumeItem{Online calibration of the four surround-view camera system by minimizing photometric lose in the overlapping regions of the bird-eye view. Calibration possible with just one snapshot from the four cameras.}
+        \resumeItemListEnd
+        \vspace{-20pt}
+        \resumeProjectHeading
+        {\textbf{\href{https://github.com/mit-han-lab/torchsparse/pull/28}{Asymmetric 3D Convolutions in Torchsparse}} $|$ \emph{PyTorch}}{February 2021}
+        \resumeItemListStart
+            \resumeItem{Contributed Asymmetric 3D Convolutions implementation for the open source repository \hyperlink{https://github.com/mit-han-lab/torchsparse}{TorchSparse}}
+        \resumeItemListEnd
+          \vspace{-20pt}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/durovo/edgehack}{Virtual Gym Trainer}} $|$ \emph{PyTorch, Azure, OpenCV, Pose Estimation} $|$ \href{https://www.youtube.com/watch?v=VLFEikGUWUI}{Demo link}}{May - June 2019}
+          \resumeItemListStart
+            \resumeItem{Platform for guiding users through trainer-specified exercises using automatic audio and visual cues.}
+            % \resumeItem{Provided real-time human pose estimation using PoseNet network and geometric estimations to measure correctness of the posture.}
+            % \resumeItem{Awarded 1$^{st}$ position in Microsoft Intelligent Edge Hackathon 2019.}
+          \resumeItemListEnd 
+
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+    \small{\item{
+    \textbf{Strengths}{: Deep Learning (PyTorch, TensorFlow, Keras), Cloud Computing (Azure, Google Cloud Platform)} \\
+     \textbf{Languages/Platforms}{: C++, C\#, Python, Go, React, Docker, MongoDB, RocksDB, MySQL, Cosmos DB} \\
+     % \textbf{Cloud}{: Azure, Google Cloud Platform} \\
+    }}
+ \end{itemize}
+   \vspace{-16pt}
+
+%------RELEVANT COURSEWORK-------
+% \section{Certifications}
+%   \resumeSubHeadingListStart
+%     \resumeMooc
+%       {\href{https://graduation.udacity.com/confirm/HV7HCJHC}{Computer Vision Nanodegree, Udacity}}{June 2020 -- August 2020}
+%       {Image Captioning using CNN-RNN, Landmark Detection and Tracking using 2D Graph SLAM}
+%     \resumeMooc{\href{https://www.coursera.org/account/accomplishments/specialization/CT6ZUGU494YJ}{Deeplearning Specialization}, deeplearning.ai}{December 2020 - March 2020}
+%     {Neural Networks and Deep learning, Structuring Machine Learning Projects, Convolutional Neural Networks, Sequence Models}
+%     \resumeMooc{\href{https://courses.edx.org/certificates/97611db8697a4dc1a46e3f428e28ae25}{Statistical Learning}, StanfordOnline: STATSX0001 }{March 2020 -- April 2020}{Boosting trees,
+% Discriminant Analysis, Splines,
+% Support vector machines}
+%   \resumeSubHeadingListEnd
+
+%  \vspace{-16pt}
+
+
+%-----------INVOLVEMENT---------------
+% \section{Leadership / Extracurricular}
+%     % \resumeSubHeadingListStart
+%         % \resumeSubheading{Fraternity}{Spring 2020 -- Present}{President}{University Name}
+%             \resumeItemListStart
+%                 \resumeItem{President of Web Enthusiasts Club NITK. Organized mock technical interviews, CTFs, Linux installation drives.}
+%                 \vspace{-16pt}
+%                 \resumeItem{Core executive member at IEEE NITK Student Chapter. Conducted hackathons and programming contests.}
+%                 % \resumeItem{Writing research paper commentary at \hyperlink{https://oneortworesearchdigest.blogspot.com}{\textit{https://oneortworesearchdigest.blogspot.com}} focusing on new neural network architectures and applications since 2020.}
+%             \resumeItemListEnd
+        
+    % \resumeSubHeadingListEnd
+
+
+\end{document}
